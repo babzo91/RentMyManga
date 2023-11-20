@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'manga/index'
+  get 'manga/new'
+  get 'manga/create'
+  get 'manga/show'
+  get 'manga/update'
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -8,4 +14,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  
 end
