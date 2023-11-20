@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'manga/index'
   get 'manga/new'
   get 'manga/create'
@@ -13,4 +14,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  
 end
