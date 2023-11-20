@@ -1,5 +1,6 @@
 class MangasController < ApplicationController
   before_action :set_manga, except: [:destroy]
+  skip_before_action :authenticate_user!, :only [:show, :index]
   def index
     @mangas = mangas.all
   end
