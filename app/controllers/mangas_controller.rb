@@ -1,21 +1,21 @@
 class MangasController < ApplicationController
-  before_action :set_manga, except: [:destroy]
-  skip_before_action :authenticate_user!, :only [:show, :index]
+  before_action :set_manga, only: [:show, :edit, :update]
+  before_action :authenticate_user!, :only [:new, :create, :edit, :update]
+
   def index
-    @mangas = mangas.all
+    @mangas = Manga.all
   end
 
   def show
-    @manga = Manga.find(params[:id])
     @bookings = @manga.bookings
   end
 
   def new
-    @manga = mange.new
+    @manga = Manga.new
   end
 
   def create
-    @manga = manga.new(manga_params)
+    @manga = Manga.new(manga_params)
     if @manga.save
       redirect_to mangas_path, notice: 'Manga créée avec succès.'
     else
@@ -24,7 +24,6 @@ class MangasController < ApplicationController
   end
 
   def edit
-    @manga = Manga.find(params[:id])
   end
 
   def update
