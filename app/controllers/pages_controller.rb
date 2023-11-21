@@ -3,4 +3,9 @@ class PagesController < ApplicationController
   def home
     @mangas = Manga.all
   end
+
+  def dashboard
+    @bookings = Booking.all
+    @booking = Booking.find(params[:id])
+  end
 end
