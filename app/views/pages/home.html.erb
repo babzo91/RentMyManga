@@ -1,3 +1,51 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RentMyManga</title>
+</head>
+<body>
 
+<header>
+  <h2 id= "logo">RentMyManga</h2>
+   <!-- Remplace avec ton logo -->
+  <div id="search-bar">
+    <input id="search-input" type="text" placeholder="Recherche...">
+    <%= image_tag('image_360.png', id: "search-icon") %>
+  </div>
+
+  <div id="user-section">
+    <img class="user-photo" src="user-photo.jpg" alt="User Photo"> <!-- Remplace avec la photo de l'utilisateur -->
+    <span>Connecté en tant que Utilisateur</span>
+  </div>
+</header>
+
+<div class="main-container">
+  <!-- Exemple de 5 cartes de manga -->
+  <div class="manga-card">
+    <img src="manga1.jpg" alt="Manga Cover 1">
+    <h2>Manga Title 1</h2>
+    <p>Description of Manga 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+
+  <div class="manga-card">
+    <img src="manga2.jpg" alt="Manga Cover 2">
+    <h2>Manga Title 2</h2>
+    <p>Description of Manga 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+
+  <!-- Ajoute plus de cartes de manga ici -->
+
+</div>
+
+<footer>
+  <span>RentMyManga</span>
+  <span>
+    <a href="#">Faqs</a> |
+    <a href="#">Le Blogs</a> |
+    <a href="#">Conditions Générales de location</a> |
+    <a href="#">Politique et confidentialité</a> |
+    <a href="#">Nos mentions Légales</a> |
+    <a href="#">Kitt Press</a> |
+    <a href="#">

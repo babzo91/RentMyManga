@@ -1,1 +1,89 @@
 // Specific CSS for your home-page
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-image: url('navbar_img.jpg'); /* Remplace avec ton image de fond */
+  background-size: cover;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+font-style: italic;
+}
+
+#search-bar {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  background-color: #ffffff64;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+
+#search-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+#user-section {
+  display: flex;
+  align-items: center;
+}
+
+.user-photo {
+  width: 30px; /* Ajuste la taille de la photo utilisateur selon tes besoins */
+  height: auto;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.manga-card {
+  border: 1px solid #ddd;
+  margin: 0 1% 20px; /* Ajout d'une petite marge entre les cartes */
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 19%; /* Chaque carte prend environ 19% de la largeur pour créer 5 colonnes */
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.manga-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
