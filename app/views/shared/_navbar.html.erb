@@ -1,12 +1,10 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://i.imgur.com/xwWXOAx.gif" %>
-    <% end %>
+    <h2 id= "logo">RentMyManga</h2>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <div id="search-bar">
+      <input id="search-input" type="text" placeholder="Recherche...">
+      <%= image_tag('image_360.png', id: "search-icon") %>
+    </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
@@ -35,4 +33,3 @@
       </ul>
     </div>
   </div>
-</div>

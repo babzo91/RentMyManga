@@ -1,8 +1,24 @@
+Manga.destroy_all
+puts 'All manga destroyed'
+User.destroy_all
+puts 'All user destroyed'
+
 User.create!(first_name: "Iqbal", last_name: "Bashir", email: "iqou@tai.com", address: "98 boulevard de l'europe 91000 Evry", password: "123456")
 User.create!(first_name: "Thierry", last_name: "Edmon", email: "thierry@edmon.com", address: "98 boulevard de l'europe 91000 Evry", password: "123456")
 User.create!(first_name: "Tai", last_name: "Tran", email: "tai@tran.com", address: "98 boulevard de l'europe 91000 Evry", password: "123456")
 User.create!(first_name: "Harris", last_name: "Shahbaz", email: "harris@shahbaz.com", address: "98 boulevard de l'europe 91000 Evry", password: "123456")
+manga_list = ["naruto", "dragon-ball-z", "valkyrie apocalypse", "fruits basket", "attaque des titans", "demon slayer", "dr.stone", "one piece", "dandadan", "Kaiju No 8"]
+puts 'Manga list'
 
+manga_list.each do |image|
+  url = URI("https://api.jikan.moe/v4/anime?q=#{image}")
+  sleep(1)
+  user_serialized = URI.open(url).read
+  user = JSON.parse(user_serialized)
+  link = user["data"][0]["images"]["jpg"]["image_url"]
+  puts link
+  # Cloudinary::Uploader.upload("san_francisco.jpg")
+end
 
 naruto = Manga.new(title: "Naruto", synopsis: "L'histoire commence pendant l'adolescence de Naruto, vers ses douze ans. Orphelin cancre et grand farceur, il fait toutes les bêtises possibles pour se faire remarquer. Son rêve : devenir le meilleur Hokage afin d'être reconnu par les habitants de son village. En effet, le démon renard à neuf queues scellé en lui a attisé la crainte et le mépris des autres villageois, qui, avec le temps, ne font plus de différence entre Kyûbi et Naruto.", author: "Masashi Kishimoto", category: "Shonen")
 naruto.user = User.all.sample

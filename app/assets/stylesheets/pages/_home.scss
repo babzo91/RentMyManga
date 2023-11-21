@@ -7,7 +7,7 @@ body {
 
 header {
   background-image: url('navbar_img.jpg'); /* Remplace avec ton image de fond */
-  background-size: cover;
+  background-position: center; /* Centre l'image dans la navbar */
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -69,7 +69,7 @@ font-style: italic;
   padding: 15px;
   border-radius: 5px;
   background-color: #fff;
-  width: 19%; /* Chaque carte prend environ 19% de la largeur pour créer 5 colonnes */
+  width: 17%; /* Chaque carte prend environ 19% de la largeur pour créer 5 colonnes */
   display: inline-block;
   box-sizing: border-box;
 }
