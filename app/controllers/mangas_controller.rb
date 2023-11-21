@@ -11,11 +11,11 @@ class MangasController < ApplicationController
   end
 
   def new
-    @manga = mange.new
+    @manga = Manga.new
   end
 
   def create
-    @manga = manga.new(manga_params)
+    @manga = Manga.new(manga_params)
     if @manga.save
       redirect_to mangas_path, notice: 'Manga créée avec succès.'
     else
