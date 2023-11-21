@@ -1,2 +1,9 @@
-<h1>Manga#index</h1>
-<p>Find me in app/views/manga/index.html.erb</p>
+<h1>Mangas à louer</h1>
+<div class = "d-flex flex-wrap">
+  <% @mangas.each do |manga| %>
+    <div class= "col-3">
+      <h4><%= manga.title %></h3>
+      <%= link_to "Voir la Fiche", manga_path(manga), class: "btn btn-primary"%>
+    </div>
+  <% end %>
+</div>
