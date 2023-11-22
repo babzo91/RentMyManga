@@ -1,7 +1,7 @@
 <div class="container">
   <%= simple_form_for booking do |f| %>
-    <%= f.input :price %>
-    <%= f.input :duration %>
+    <%= f.input :price, label: "Prix/jour en €" %>
+    <%# <%= f.input :duration %>
 
     <%= f.submit class: "btn btn-success mt-4" %>
   <% end %>

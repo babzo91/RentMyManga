@@ -1,18 +1,20 @@
 class BookingsController < ApplicationController
   def new
-    @bookings = Booking.new
+    @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
     if @booking.save
-      redirect_to bookings_path, notice: 'Booking créée avec succès.'
+      redirect_to mangas_path, notice: 'Booking créée avec succès.'
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
+    @booking = Booking.find(params[:id])
   end
 
   def update
@@ -26,7 +28,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:price, :duration, :status, :user, :manga)
+    params.require(:booking).permit(:price, :status, :user, :manga)
   end
 
   def set_booking
