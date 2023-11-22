@@ -2,5 +2,6 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :manga
 
-  validates :price, :duration, presence: true
+  validates :price, presence: true
+  # :duration
 end

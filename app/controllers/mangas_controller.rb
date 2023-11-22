@@ -18,7 +18,7 @@ class MangasController < ApplicationController
     @manga = Manga.new(manga_params)
     @manga.user = current_user
     if @manga.save
-      redirect_to manga_path(@manga), notice: 'Manga créée avec succès.'
+      redirect_to new_booking_path(@manga), notice: 'Manga mis en location avec succès.'
     else
       render :new, status: :unprocessable_entity
     end
