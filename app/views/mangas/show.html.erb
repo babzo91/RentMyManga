@@ -9,7 +9,7 @@
   </div>
   <div class = "col-3 p-5">
     <p><%= link_to "retour à la liste des mangas", mangas_path, class: "btn btn-primary"%></p>
-    <p><%= link_to "louer ce manga", new_booking_path, class: "btn btn-primary"%></p>
+    <p><%= link_to "louer ce manga", new_manga_booking_path(@manga), class: "btn btn-primary"%></p>
 
   </div>
 </div>
