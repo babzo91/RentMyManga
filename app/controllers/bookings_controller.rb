@@ -1,10 +1,13 @@
 class BookingsController < ApplicationController
   def new
+    @manga = Manga.find(params[:manga_id])
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @manga = Manga.find(params[:manga_id])
+    @booking.manga = @manga
     @booking.user = current_user
     if @booking.save
       redirect_to mangas_path, notice: 'Booking créée avec succès.'
