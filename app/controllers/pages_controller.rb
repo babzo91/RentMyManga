@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   require 'json'
   require 'open-uri'
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: [:home, :show]
 
   def home
     @mangas = Manga.all
@@ -10,5 +10,8 @@ class PagesController < ApplicationController
   def dashboard
     @bookings = Booking.all
     @booking = Booking.find(params[:id])
+  end
+
+  def show
   end
 end
