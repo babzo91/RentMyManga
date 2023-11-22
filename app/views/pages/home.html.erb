@@ -6,10 +6,6 @@
   <title>RentMyManga</title>
 </head>
 
-<header>
-  <%= render "shared/navbar" %>
-</header>
-
 <body>
 <div class="main-container">
 
@@ -22,20 +18,9 @@
         <p><%= link_to "Voir la Fiche", manga_path(manga), class: "btn btn-primary float-end"%></p>
       </div>
     <% end %>
+    <%= link_to "Tu trouve pas ton bonheur ?", mangas_path, class:"manga-card" %>
   </div>
 
 </div>
 </body>
-
-<footer>
-<span>RentMyManga</span>
-  <span class="footer">
-    <a href="#">Faq</a> |
-    <a href="#">Le Blog</a> |
-    <a href="#">Conditions générales de location</a> |
-    <a href="#">Politique et confidentialité</a> |
-    <a href="#">Nos mentions légales</a> |
-    <a href="#">
- </span>
-</footer>
 </html>
