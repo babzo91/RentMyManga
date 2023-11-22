@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.manga = @manga
     @booking.user = current_user
     @booking.price = (@booking.end_date - @booking.start_date) * @manga.price_per_day
-    if @booking.save
+    if @booking.savex
       redirect_to manga_path(@manga), notice: 'Booking créée avec succès.'
     else
       render :new, status: :unprocessable_entity
