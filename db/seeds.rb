@@ -1,3 +1,5 @@
+Booking.destroy_all
+puts 'All booking destroyed'
 Manga.destroy_all
 puts 'All manga destroyed'
 User.destroy_all
@@ -21,25 +23,25 @@ puts 'Manga list'
 #   link
 # end
 
-naruto = Manga.new(title: "Naruto", synopsis: "L'histoire commence pendant l'adolescence de Naruto, vers ses douze ans. Orphelin cancre et grand farceur, il fait toutes les bêtises possibles pour se faire remarquer. Son rêve : devenir le meilleur Hokage afin d'être reconnu par les habitants de son village. En effet, le démon renard à neuf queues scellé en lui a attisé la crainte et le mépris des autres villageois, qui, avec le temps, ne font plus de différence entre Kyûbi et Naruto.", author: "Masashi Kishimoto", category: "Shonen")
+naruto = Manga.new(title: "Naruto", synopsis: "L'histoire commence pendant l'adolescence de Naruto, vers ses douze ans. Orphelin cancre et grand farceur, il fait toutes les bêtises possibles pour se faire remarquer. Son rêve : devenir le meilleur Hokage afin d'être reconnu par les habitants de son village. En effet, le démon renard à neuf queues scellé en lui a attisé la crainte et le mépris des autres villageois, qui, avec le temps, ne font plus de différence entre Kyûbi et Naruto.", author: "Masashi Kishimoto", category: "Shonen", price_per_day: 5)
 naruto.user = User.all.sample
 naruto.save!
 puts 'Naruto created'
 
 dbz = Manga.new(title: "Dragon-Ball-Z", synopsis: "Dragon Ball Z se déroule cinq ans après le mariage de Son Goku et de Chichi, désormais parents de Son Gohan2. Raditz, un mystérieux guerrier extraterrestre, qui s'avère être le frère de Son Goku, arrive sur Terre pour retrouver ce dernier. Ce dernier apprend qu'il vient d'une planète de guerriers redoutables dont il ne reste plus que quatre survivants, et qu'il avait été envoyé sur la planète Terre dans le but de la conquérir (une chute alors qu'il était enfant lui aurait fait perdre la mémoire).",
-author: "Akira Toriyama", category: "Shonen")
+author: "Akira Toriyama", category: "Shonen", price_per_day: 2)
 dbz.user = User.all.sample
 dbz.save!
 puts 'Dragon-Ball-Z created'
 
 val = Manga.new(title: "Valkyrie Apocalypse", synopsis: "Tous les mille ans, l'ensemble des dieux, tous panthéons réunis, se réunissent au Valhalla, le paradis des âmes, lors d'une assemblée présidée par Zeus, le dieu suprême grec, afin de décider du sort des humains. Or, cette année-là, il est décidé à la quasi-unanimité de détruire l'humanité.",
-author: "Takeo Ono", category: "Seinen")
+author: "Takeo Ono", category: "Seinen", price_per_day: 3)
 val.user = User.all.sample
 val.save!
 puts 'Valkyrie Apocalypse created'
 
 fruits = Manga.new(title: "Fruits Basket", synopsis: "Tohru Honda est une lycéenne de 16 ans qui vit seule sous une tente après la mort de sa mère. Sans le savoir, elle s'est installée sur la propriété de la famille Sôma. Lorsqu'elle explore les alentours, elle voit une maison et y entre. Elle y rencontre Yuki et Shiguré Sôma. Ayant appris qu'elle vivait sous une tente, ils lui proposent de loger chez eux en échange de tâches ménagères.",
-author: "Natsuki Takaya", category: "	Shōjo")
+author: "Natsuki Takaya", category: "	Shōjo", price_per_day: 2)
 fruits.user = User.all.sample
 fruits.save!
 puts 'Fruits Basket created'
