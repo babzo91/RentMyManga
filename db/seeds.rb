@@ -3,7 +3,7 @@ puts 'All manga destroyed'
 User.destroy_all
 puts 'All user destroyed'
 
-User.create!(first_name: "Iqbal", last_name: "Bashir", email: "iqou@tai.com", address: "98 boulevard de l'europe 91000 Evry", password: "123456")
+User.create!(first_name: "Iqbal", last_name: "Bashir", email: "iqou@bashir.com", address: "98 boulevard de l'europe 91000 Evry", password: "123456")
 User.create!(first_name: "Thierry", last_name: "Edmon", email: "thierry@edmon.com", address: "98 boulevard de l'europe 91000 Evry", password: "123456")
 User.create!(first_name: "Tai", last_name: "Tran", email: "tai@tran.com", address: "98 boulevard de l'europe 91000 Evry", password: "123456")
 User.create!(first_name: "Harris", last_name: "Shahbaz", email: "harris@shahbaz.com", address: "98 boulevard de l'europe 91000 Evry", password: "123456")
