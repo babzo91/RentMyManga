@@ -7,6 +7,7 @@ class MangasController < ApplicationController
   end
 
   def show
+    @user = @manga.user
     @bookings = @manga.bookings
   end
 
