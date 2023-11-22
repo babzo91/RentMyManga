@@ -4,7 +4,7 @@
     <% @mangas.each do |manga| %>
       <div class= "col-2 m-2 p-2 g-5 bg-light">
         <h4 class= "text-center"><%= manga.title%></h4>
-        <%= image_tag "https://i.imgur.com/6XrpwHL.jpg", height: '320', width: '100%xauto' %>
+        <%= image_tag("berserk.jpg", height: '320', width: '100%xauto') %>
         <p><%= link_to "Voir la Fiche", manga_path(manga), class: "btn btn-primary float-end"%></p>
       </div>
     <% end %>
