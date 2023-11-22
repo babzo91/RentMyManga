@@ -16,14 +16,16 @@ class MangasController < ApplicationController
 
   def create
     @manga = Manga.new(manga_params)
+    @manga.user = current_user
     if @manga.save
-      redirect_to mangas_path, notice: 'Manga créée avec succès.'
+      redirect_to manga_path(@manga), notice: 'Manga créée avec succès.'
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
+    @manga = Manga.find(params[:id])
   end
 
   def update
@@ -37,7 +39,7 @@ class MangasController < ApplicationController
   private
 
   def manga_params
-    params.require(:manga).permit(:title, :synopsis, :author, :category, :user)
+    params.require(:manga).permit(:title, :synopsis, :author, :category)
   end
 
   def set_manga
