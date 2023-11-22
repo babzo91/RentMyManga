@@ -9,8 +9,23 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
+  <header>
+    <%= render "shared/navbar" %>
+  </header>
+  
   <body>
     <%= yield %>
   </body>
+
+  <footer>
+    <span>RentMyManga</span>
+    <span class="footer">
+      <a href="#">Faq</a> |
+      <a href="#">Le Blog</a> |
+      <a href="#">Conditions générales de location</a> |
+      <a href="#">Politique et confidentialité</a> |
+      <a href="#">Nos mentions légales</a> |
+      <a href="#">
+    </span>
+</footer>
 </html>
