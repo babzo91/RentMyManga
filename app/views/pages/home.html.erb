@@ -11,16 +11,14 @@
 </header>
 
 <body>
-<div class="main-container">
-
-  <% @mangas.each do |manga| %>
-    <% manga_image = @user["data"][0]["images"]["jpg"]["image_url"] %>
-    <div class="manga-card">
-      <%= image_tag manga_image %>
-      <h2><%= manga.title %></h2>
-    </div>
-  <% end %>
-</div>
+  <div class="main-container">
+    <% @mangas.each do |manga| %>
+      <div class="manga-card">
+        <%# <%= cl_image_tag '35018304aa8a5a62957ad5a14bbc4620'   height: 300, width: 400, crop: :fill %> %>
+        <h2><%= manga.title %></h2>
+      </div>
+    <% end %>
+  </div>
 </body>
 
 <footer>
