@@ -13,6 +13,7 @@
     <p>Prix/J: <%= "#{@manga.price_per_day} €"%></p>
   </div>
   <div class = "col-3 p-5">
+    <p>Vendu par <%= @user.last_name %> <%= @user.first_name %></p>
     <p><%= link_to "retour à la liste des mangas", mangas_path, class: "btn btn-primary"%></p>
     <p><%= link_to "louer ce manga", new_manga_booking_path(@manga), class: "btn btn-primary"%></p>
   </div>
