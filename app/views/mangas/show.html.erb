@@ -2,7 +2,7 @@
   <div class = "col-8 p-5 m-5 text-bg-info">
     <h1><strong><%= @manga.title %></h1></strong>
     <h3>Synopsis:</h2>
-    <%= cl_image_tag @manga.photo.key, height: 300, width: 400, crop: :fill %>
+    <%# <%= cl_image_tag @manga.photo.key, height: 300, width: 400, crop: :fill %> %>
     <p><%= @manga.synopsis  %></p>
     <p>Auteur: <%= @manga.author %></p>
     <p>Catégorie: <%= @manga.category %></p>
