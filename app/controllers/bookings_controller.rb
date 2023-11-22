@@ -9,8 +9,9 @@ class BookingsController < ApplicationController
     @manga = Manga.find(params[:manga_id])
     @booking.manga = @manga
     @booking.user = current_user
+    @booking.price = (@booking.end_date - @booking.start_date) * @manga.price_per_day
     if @booking.save
-      redirect_to mangas_path, notice: 'Booking créée avec succès.'
+      redirect_to manga_path(@manga), notice: 'Booking créée avec succès.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,7 +32,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:price, :status, :user, :manga)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 
   def set_booking

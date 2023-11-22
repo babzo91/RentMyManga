@@ -6,6 +6,7 @@
     <p><%= @manga.synopsis  %></p>
     <p>Auteur: <%= @manga.author %></p>
     <p>Catégorie: <%= @manga.category %></p>
+    <p>Prix/J: <%= "#{@manga.price_per_day} €"%></p>
   </div>
   <div class = "col-3 p-5">
     <p><%= link_to "retour à la liste des mangas", mangas_path, class: "btn btn-primary"%></p>
