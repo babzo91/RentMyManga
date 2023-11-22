@@ -1,9 +1,15 @@
-<h1>Mangas à louer</h1>
-<div class = "d-flex flex-wrap">
-  <% @mangas.each do |manga| %>
-    <div class= "col-3">
-      <h4><%= manga.title %></h3>
-      <%= link_to "Voir la Fiche", manga_path(manga), class: "btn btn-primary"%>
-    </div>
-  <% end %>
+<h1 class= "text-center">Liste des Mangas mis en location</h1>
+<div class = "">
+  <div class = "d-flex flex-wrap justify-content-center">
+    <% @mangas.each do |manga| %>
+      <div class= "col-3 m-2 p-2 g-5 bg-light">
+        <h4 class= "text-center"><%= manga.title%></h4>
+        <%= link_to "Voir la Fiche", manga_path(manga), class: "btn btn-primary float-end"%>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class = "mx-auto p-5 text-center bg-light w-50">
+<h2>tu souhaites mettre en location un manga ?</h2>
+<%= link_to "Click ici", new_manga_path, class: "btn btn-primary float-center"%>
 </div>
