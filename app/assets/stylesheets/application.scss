@@ -8,7 +8,8 @@
 @import "font-awesome";
 
 // Your CSS partials
-@import "components/index";
+@import "components/navbar";
+@import "components/footer";
 @import "pages/home";
 @import "pages/dashboard";
 @import "pages/index";
@@ -17,22 +18,3 @@
 
 // Flatpickr
 @import 'flatpickr/dist/flatpickr.min.css';
-
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-header {
-  background-image: url('navbar_img.jpg'); /* Remplace avec ton image de fond */
-  background-position: center; /* Centre l'image dans la navbar */
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}

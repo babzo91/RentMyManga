@@ -1,13 +1,9 @@
-<header>
-  <%= render "shared/navbar" %>
-</header>
-
-<h1 class="text-center">Liste des Mangas mis en location</h1>
+<h1 class="text-center">Liste des mangas mis en location</h1>
 
 <div class="d-flex flex-wrap justify-content-center">
   <% @mangas.each do |manga| %>
     <div class="card m-2" style="width: 18rem;">
-      <%= image_tag("berserk.jpg", class: "card-img-top", alt: "#{manga.title} Cover") %>
+      <%= cl_image_tag manga.photo.key, height: '320', width: '300', class: "card-img-top", alt: "#{manga.title} Cover" %>
       <div class="card-body">
         <h5 class="card-title text-center"><%= manga.title %></h5>
         <p class="card-text">Auteur: <%= manga.author %></p>
