@@ -1,11 +1,11 @@
 <div class="container">
   <%= simple_form_for manga do |f| %>
-    <%= f.input :title %>
-    <%= f.input :synopsis %>
-    <%= f.input :author %>
-    <%= f.input :category %>
-    <%= f.input :price_per_day %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit class: "btn btn-success mt-4" %>
+    <%= f.input :title, label: "Titre :" %>
+    <%= f.input :synopsis, label: "Synopsis :", hint: "Minimum 50 caractères" %>
+    <%= f.input :author, label: "Auteur :"%>
+    <%= f.input :category, label: "Catégorie :" %>
+    <%= f.input :price_per_day, label: "Prix/jour en € :" %>
+    <%= f.input :photo, as: :file, label: "Photo :" %>
+    <%= f.button :submit, "Ajouter mon manga", class: "btn btn-success mt-4" %>
   <% end %>
 </div>

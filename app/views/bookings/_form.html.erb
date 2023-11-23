@@ -1,9 +1,9 @@
 <div class="container">
   <%= simple_form_for [manga, booking] do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
+    <%= f.input :start_date, label: "Date de début de location souhaitée: " %>
+    <%= f.input :end_date, label: "Date de fin de location souhaitée: " %>
     <%# <%= f.input :duration %>
 
-    <%= f.submit class: "btn btn-success mt-4" %>
+    <%= f.button :submit, "Je loue ce manga", class: "btn btn-success mt-4" %>
   <% end %>
 </div>
