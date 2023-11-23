@@ -1,19 +1,21 @@
 <div class = "d-flex flex-fill">
-  <div class = "col-8 p-5 m-5 text-bg-info">
+  <div class = "col-8 p-5 m-5 text-bg-light">
     <h1><strong><%= @manga.title %></h1></strong>
-    <%= cl_image_tag @manga.photo.key, height: 300, width: 400, crop: :fill %>
-    <h3>Synopsis:</h2>
-    <p><%= @manga.synopsis  %></p>
-    <p>Auteur: <%= @manga.author %></p>
-    <p>Catégorie: <%= @manga.category %></p>
-  </div>
-  <div class = "col-3 p-5">
-    <div class = "sticky-top text-center" style="top: 140px;">
-      <p>Mis en location par</p>
-      <p><%= @user.first_name %> <%= @user.last_name %></p>
-      <p>Prix/J: <%= "#{@manga.price_per_day} €"%></p>
-      <p><%= link_to "retour à la liste des mangas", mangas_path, class: "btn btn-primary"%></p>
-      <p><%= link_to "louer ce manga", new_manga_booking_path(@manga), class: "btn btn-primary"%></p>
+    <%= cl_image_tag @manga.photo.key, height: 400, width: 300, crop: :fit %>
+      <div style="margin-top: 10px;">
+        <h4>Synopsis:</h4>
+        <p><em><%= @manga.synopsis %></em></p>
+        <h4><p>Auteur: <%= @manga.author %></p></h4>
+        <h4><p>Catégorie: <%= @manga.category %></p></h4>
+      </div>
+    </div>
+          <div class = "col-3 p-5">
+          <div class = "sticky-top text-center" style="top: 140px;">
+          <p>Mis en location par</p>
+          <p><%= @user.first_name %> <%= @user.last_name %></p>
+          <p>Prix/Jour: <%= "#{@manga.price_per_day} €"%></p>
+          <p><%= link_to "Retour à la liste des mangas", mangas_path, class: "btn btn-success"%></p>
+          <p><%= link_to "Louer ce manga", new_manga_booking_path(@manga), class: "btn btn-dark"%></p>
     </div>
   </div>
 </div>
