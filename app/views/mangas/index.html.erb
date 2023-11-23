@@ -7,7 +7,7 @@
       <div class="card-body">
         <h5 class="card-title text-center"><%= manga.title %></h5>
         <p class="card-text">Auteur: <%= manga.author %></p>
-        <p class="card-text" style="margin-bottom: 10px;">Prix: <%= (manga.price_per_day) %>€</p>
+        <p class="card-text" style="margin-bottom: 10px;">Prix: <%= manga.price_per_day %>€</p>
       </div>
       <div class="text-right mb-2 mx-auto">
         <%= link_to "Voir la Fiche", manga_path(manga), class: "btn btn-primary" %>

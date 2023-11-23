@@ -1,47 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RentMyManga</title>
-</head>
-<body>
-  <h1 class= "text-center">Top des ventes</h1>
-  <div class="main-container">
-   <div id="manga_top" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <% @mangas.first(3).each_with_index do |manga, index| %>
+<h1 class= "text-center">Top des ventes</h1>
+<div class="main-container">
+  <div id="manga_top" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <% @mangas.first(3).each_with_index do |manga, index| %>
       <div class="carousel-item <%= 'active' if index.zero? %>">
         <div class="row justify-content-center">
-          <div class="col-3">
-            <div class="m-2 p-2 g-5 bg-light">
-              <h4 class="text-center"><%= manga.title %></h4>
-              <%= cl_image_tag manga.photo.key, height: '320', width: '300', class: 'd-block w-100 carousel-image' %>
-              <p><%= link_to "Voir la Fiche", manga_path(manga), class: "btn btn-primary float-end" %></p>
+          <div class="col-md-3">
+            <div class="m-2 p-2 g-5 bg-light text-center">
+              <%= link_to manga_path(manga) do %>
+              <%= cl_image_tag manga.photo.key, height: '320', class: 'd-block mx-auto carousel-image' %>
+              <% end %>
+              <div class="card-body">
+                <h5 class="card-title"><%= manga.title %></h5>
+                <p class="card-text">Auteur: <%= manga.author %></p>
+                <p class="card-text">Prix: <%= manga.price_per_day %>€</p>
+                <%= link_to "Voir la Fiche", manga_path(manga), class: "btn btn-primary" %>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    <% end %>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#manga_top" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon bg-primary" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#manga_top" data-bs-slide="next">
-    <span class="carousel-control-next-icon bg-primary" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-
-    <div class = "mx-auto p-5 text-center bg-light w-50">
-      <h2><%= link_to "Voir tout les mangas", mangas_path, class: "text-decoration-none" %></h2>
-      <h2>OU <br></h2>
-      <h2>Tu souhaites mettre en location un manga ?</h2>
-      <%= link_to "Clique ici", new_manga_path, class: "btn btn-primary float-center"%>
+      <% end %>
     </div>
 
+    <button class="carousel-control-prev" type="button" data-bs-target="#manga_top" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bg-primary" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#manga_top" data-bs-slide="next">
+      <span class="carousel-control-next-icon bg-primary" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-</body>
-</html>
+
+
+<div class = "mx-auto mt-2 p-5 text-center bg-light w-50">
+  <h2>Tu souhaites mettre en location un manga ?</h2>
+  <h1><%= link_to "Clique ici", new_manga_path, class: "btn btn-primary float-center"%></h1>
+</div>
+</div>
