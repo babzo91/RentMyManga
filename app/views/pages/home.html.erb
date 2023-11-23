@@ -11,22 +11,36 @@
 <body>
   <h1 class= "text-center">Top des ventes</h1>
   <div class="main-container">
-
-    <div class = "d-flex flex-wrap justify-content-center">
-      <% @mangas.each do |manga| %>
-        <div class= "col-3 m-2 p-2 g-5 bg-light">
-          <h4 class= "text-center"><%= manga.title%></h4>
-          <%= image_tag("berserk.jpg", height: '320', width: '100%xauto') %>
-          <%# <%= cl_image_tag '35018304aa8a5a62957ad5a14bbc4620'   height: 300, width: 400, crop: :fill %>
-          <p><%= link_to "Voir la Fiche", manga_path(manga), class: "btn btn-primary float-end"%></p>
+   <div id="manga_top" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <% @mangas.first(3).each_with_index do |manga, index| %>
+      <div class="carousel-item <%= 'active' if index.zero? %>">
+        <div class="row justify-content-center">
+          <div class="col-3">
+            <div class="m-2 p-2 g-5 bg-light">
+              <h4 class="text-center"><%= manga.title %></h4>
+              <%= cl_image_tag manga.photo.key, height: '320', width: '300', class: 'd-block w-100 carousel-image' %>
+              <p><%= link_to "Voir la Fiche", manga_path(manga), class: "btn btn-primary float-end" %></p>
+            </div>
+          </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#manga_top" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon bg-primary" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#manga_top" data-bs-slide="next">
+    <span class="carousel-control-next-icon bg-primary" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
     <div class = "mx-auto p-5 text-center bg-light w-50">
-      <h2><%= link_to "Tu trouve pas ton bonheur ?", mangas_path %></h2>
-      <h2><br> OU <br></h2>
-    </div>
-    <div class = "mx-auto p-5 text-center bg-light w-50">
+      <h2><%= link_to "Voir tout les mangas", mangas_path, class: "text-decoration-none" %></h2>
+      <h2>OU <br></h2>
       <h2>Tu souhaites mettre en location un manga ?</h2>
       <%= link_to "Clique ici", new_manga_path, class: "btn btn-primary float-center"%>
     </div>

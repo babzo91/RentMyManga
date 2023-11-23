@@ -1,7 +1,3 @@
-<header>
-  <%= render "shared/navbar" %>
-</header>
-
 <div class = "d-flex flex-fill">
   <div class = "col-8 p-5 m-5 text-bg-info">
     <h1><strong><%= @manga.title %></h1></strong>
@@ -10,11 +6,14 @@
     <p><%= @manga.synopsis  %></p>
     <p>Auteur: <%= @manga.author %></p>
     <p>Catégorie: <%= @manga.category %></p>
-    <p>Prix/J: <%= "#{@manga.price_per_day} €"%></p>
   </div>
   <div class = "col-3 p-5">
-    <p>Mis en location par <%= @user.first_name %> <%= @user.last_name %></p>
-    <p><%= link_to "retour à la liste des mangas", mangas_path, class: "btn btn-primary"%></p>
-    <p><%= link_to "louer ce manga", new_manga_booking_path(@manga), class: "btn btn-primary"%></p>
+    <div class = "sticky-top text-center" style="top: 140px;">
+      <p>Mis en location par</p>
+      <p><%= @user.first_name %> <%= @user.last_name %></p>
+      <p>Prix/J: <%= "#{@manga.price_per_day} €"%></p>
+      <p><%= link_to "retour à la liste des mangas", mangas_path, class: "btn btn-primary"%></p>
+      <p><%= link_to "louer ce manga", new_manga_booking_path(@manga), class: "btn btn-primary"%></p>
+    </div>
   </div>
 </div>
