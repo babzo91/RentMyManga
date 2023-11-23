@@ -3,10 +3,10 @@
     <%# <%= f.input :end_date, as: :string, label: "Date de fin de location souhaitée: ", input_html: { class: "date-picker", placeholder: "Sélectionnez une date" } %>
     <%# <%= f.input :start_date, as: :string, label: "Date de début de location souhaitée: ", input_html: { class: "date-picker", placeholder: "Sélectionnez une date" } %>
 <%= f.input :start_date,
-            as: :string,
+            as: :string, label: "Date de début de location souhaitée: ",
             input_html: { data: { controller: "datepicker" } } %>
 <%= f.input :end_date,
-            as: :string,
+            as: :string, label: "Date de fin de location souhaitée: ",
             input_html: { data: { controller: "datepicker" } } %>
 
     <%= f.button :submit, "Je loue ce manga", class: "btn btn-success mt-4" %>
