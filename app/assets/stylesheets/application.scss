@@ -15,6 +15,17 @@
 @import "pages/index";
 @import "pages/annonce.scss";
 @import "mangas/index";
+@import "mangas/show";
 
 // Flatpickr
 @import 'flatpickr/dist/flatpickr.min.css';
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
