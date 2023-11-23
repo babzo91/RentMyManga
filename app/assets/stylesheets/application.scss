@@ -13,6 +13,7 @@
 @import "pages/dashboard";
 @import "pages/index";
 @import "mangas/index";
+@import "mangas/show";
 
 // Flatpickr
 @import 'flatpickr/dist/flatpickr.min.css';
@@ -25,4 +26,3 @@ footer {
   display: flex;
   justify-content: space-between;
 }
-

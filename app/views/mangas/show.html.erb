@@ -1,21 +1,30 @@
-<div class = "d-flex flex-fill">
-  <div class = "col-8 p-5 m-5 text-bg-light">
-    <h1><strong><%= @manga.title %></h1></strong>
-    <%= cl_image_tag @manga.photo.key, height: 400, width: 300, crop: :fit %>
-      <div style="margin-top: 10px;">
-        <h4>Synopsis:</h4>
-        <p><em><%= @manga.synopsis %></em></p>
-        <h4><p>Auteur: <%= @manga.author %></p></h4>
-        <h4><p>Catégorie: <%= @manga.category %></p></h4>
-      </div>
-    </div>
-          <div class = "col-3 p-5">
-          <div class = "sticky-top text-center" style="top: 140px;">
+<div class="row align-items-start">
+  <!-- Première carte -->
+  <div class="col-3 p-4 m-4 order-2">
+    <div class="card">
+      <div class="card-body sh">
+        <div class="text-center" style="top: 140px;">
           <p>Mis en location par</p>
           <p><%= @user.first_name %> <%= @user.last_name %></p>
           <p>Prix/Jour: <%= "#{@manga.price_per_day} €"%></p>
-          <p><%= link_to "Retour à la liste des mangas", mangas_path, class: "btn btn-success"%></p>
           <p><%= link_to "Louer ce manga", new_manga_booking_path(@manga), class: "btn btn-dark"%></p>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Deuxième carte -->
+<%= link_to "Retour à la liste des mangas", mangas_path, class:  "btn btn-success" %>
+  <div class="col-8 p-4 m-4 order-1 d-flex">
+        <%= cl_image_tag @manga.photo.key, height: 300, width: 300, crop: :fit %>
+        <div class="ms-5">
+        <h1><strong><%= @manga.title %></strong></h1>
+        <div class="mt-3">
+          <h4>Synopsis:</h4>
+          <p><em><%= @manga.synopsis %></em></p>
+          <h4>Auteur: <%= @manga.author %></h4>
+          <h4>Catégorie: <%= @manga.category %></h4>
+          </div>
+      </div>
   </div>
 </div>
