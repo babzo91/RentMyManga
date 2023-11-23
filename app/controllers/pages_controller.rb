@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   require 'json'
   require 'open-uri'
-  skip_before_action :authenticate_user!, only: [:home, :show, :conditions]
+  skip_before_action :authenticate_user!, only: [:home, :conditions, :legal, :confidentialites]
 
   def home
     @mangas = Manga.all
@@ -19,6 +19,6 @@ class PagesController < ApplicationController
   def annonce
   end
 
-  def show
+  def dashboard
   end
 end

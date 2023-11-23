@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get '/confidentialites', to: 'pages#confidentialites', as: :confident
   get '/legal', to: 'pages#legal', as: :legal
   get '/faq', to: 'pages#faq', as: :faq
+  get '/dashboard', to: 'pages#dashboard', as: :dashboard
 end
