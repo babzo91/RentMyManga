@@ -16,6 +16,9 @@ class PagesController < ApplicationController
   def legal
   end
 
+  def annonce
+  end
+
   def show
   end
 end
