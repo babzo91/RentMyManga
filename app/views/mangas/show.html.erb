@@ -1,7 +1,7 @@
 <div class = "d-flex flex-fill">
   <div class = "col-8 p-5 m-5 text-bg-info">
     <h1><strong><%= @manga.title %></h1></strong>
-
+    <%= cl_image_tag @manga.photo.key, height: 300, width: 400, crop: :fill %>
     <h3>Synopsis:</h2>
     <p><%= @manga.synopsis  %></p>
     <p>Auteur: <%= @manga.author %></p>
