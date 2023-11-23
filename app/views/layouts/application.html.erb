@@ -8,6 +8,16 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="/assets/flatpickr/flatpickr.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      flatpickr('.date-picker', {
+        dateFormat: 'Y-m-d', // Format de la date
+        // ... autres options
+      });
+    });
+  </script>
   </head>
 
   <header class = "sticky-top">

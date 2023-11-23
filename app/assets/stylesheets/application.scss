@@ -13,6 +13,8 @@
 @import "pages/dashboard";
 @import "pages/index";
 
+// Flatpickr
+@import 'flatpickr/dist/flatpickr.min.css';
 
 footer {
   background-color: #333;
@@ -34,3 +36,4 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
