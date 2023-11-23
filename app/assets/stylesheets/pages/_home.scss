@@ -6,53 +6,6 @@ body {
 }
 
 
-#logo {
-font-style: italic;
-}
-
-#search-bar {
-  display: flex;
-  align-items: center;
-  width: 50%;
-  margin: 0 auto;
-  background-color: #ffffff64;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-#search-input {
-  flex: 1;
-  border: none;
-  outline: none;
-  padding: 5px;
-}
-
-#search-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
-
-#user-section {
-  display: flex;
-  align-items: center;
-}
-
-.user-photo {
-  width: 30px; /* Ajuste la taille de la photo utilisateur selon tes besoins */
-  height: auto;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.main-container {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 .manga-card {
   border: 1px solid #ddd;
   margin: 0 1% 20px; /* Ajout d'une petite marge entre les cartes */
@@ -73,4 +26,12 @@ font-style: italic;
 .carousel-control-prev, .carousel-control-next {
   margin-top: -50px; /* Ajuste la position verticale des flèches */
   color: rgb(248, 0, 0); /* Change la couleur des flèches */
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
