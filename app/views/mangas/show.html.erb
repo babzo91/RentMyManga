@@ -7,9 +7,10 @@
     <p>Auteur: <%= @manga.author %></p>
     <p>Catégorie: <%= @manga.category %></p>
   </div>
-  <div class = "col-3 p-5 mx-auto">
-    <div class = "sticky-top" style="top: 140px;">
-      <p>Mis en location par <%= @user.first_name %> <%= @user.last_name %></p>
+  <div class = "col-3 p-5">
+    <div class = "sticky-top text-center" style="top: 140px;">
+      <p>Mis en location par</p>
+      <p><%= @user.first_name %> <%= @user.last_name %></p>
       <p>Prix/J: <%= "#{@manga.price_per_day} €"%></p>
       <p><%= link_to "retour à la liste des mangas", mangas_path, class: "btn btn-primary"%></p>
       <p><%= link_to "louer ce manga", new_manga_booking_path(@manga), class: "btn btn-primary"%></p>
