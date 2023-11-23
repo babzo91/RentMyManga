@@ -1,0 +1,13 @@
+.footer {
+  flex-shrink: 0; /* Empêche le footer de rétrécir s'il y a peu de contenu */
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  background-color: #333;
+  padding: 10px;
+  text-decoration: none;
+}
