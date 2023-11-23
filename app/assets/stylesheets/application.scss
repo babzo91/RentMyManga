@@ -9,9 +9,11 @@
 
 // Your CSS partials
 @import "components/navbar";
+@import "components/footer";
 @import "pages/home";
 @import "pages/dashboard";
 @import "pages/index";
+@import "pages/annonce.scss";
 @import "mangas/index";
 @import "mangas/show";
 
@@ -26,3 +28,4 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+

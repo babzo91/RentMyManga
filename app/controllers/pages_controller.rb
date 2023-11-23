@@ -1,15 +1,22 @@
 class PagesController < ApplicationController
   require 'json'
   require 'open-uri'
-  skip_before_action :authenticate_user!, only: [:home, :show]
+  skip_before_action :authenticate_user!, only: [:home, :show, :conditions]
 
   def home
     @mangas = Manga.all
   end
 
-  def dashboard
-    @bookings = Booking.all
-    @booking = Booking.find(params[:id])
+  def conditions
+  end
+
+  def confidentialites
+  end
+
+  def legal
+  end
+
+  def annonce
   end
 
   def show
