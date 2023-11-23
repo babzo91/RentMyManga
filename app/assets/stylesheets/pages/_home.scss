@@ -5,16 +5,6 @@ body {
   padding: 0;
 }
 
-header {
-  background-image: url('navbar_img.jpg'); /* Remplace avec ton image de fond */
-  background-position: center; /* Centre l'image dans la navbar */
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 #logo {
 font-style: italic;
@@ -79,11 +69,8 @@ font-style: italic;
   height: auto;
 }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
+
+.carousel-control-prev, .carousel-control-next {
+  margin-top: -50px; /* Ajuste la position verticale des flèches */
+  color: rgb(248, 0, 0); /* Change la couleur des flèches */
 }
