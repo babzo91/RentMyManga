@@ -2,19 +2,25 @@
   <%= render "shared/navbar" %>
 </header>
 
-<h1 class= "text-center">Liste des Mangas mis en location</h1>
-<div class = "">
-  <div class = "d-flex flex-wrap justify-content-center">
-    <% @mangas.each do |manga| %>
-      <div class= "col-2 m-2 p-2 g-5 bg-light">
-        <h4 class= "text-center"><%= manga.title%></h4>
-        <%= image_tag("berserk.jpg", height: '320', width: '100%xauto') %>
-        <p><%= link_to "Voir la Fiche", manga_path(manga), class: "btn btn-primary float-end"%></p>
+<h1 class="text-center">Liste des Mangas mis en location</h1>
+
+<div class="d-flex flex-wrap justify-content-center">
+  <% @mangas.each do |manga| %>
+    <div class="card m-2" style="width: 18rem;">
+      <%= image_tag("berserk.jpg", class: "card-img-top", alt: "#{manga.title} Cover") %>
+      <div class="card-body">
+        <h5 class="card-title text-center"><%= manga.title %></h5>
+        <p class="card-text">Auteur: <%= manga.author %></p>
+        <p class="card-text" style="margin-bottom: 10px;">Prix: <%= (manga.price_per_day) %>€</p>
       </div>
-    <% end %>
-  </div>
+      <div class="text-right mb-2 mx-auto">
+        <%= link_to "Voir la Fiche", manga_path(manga), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
 </div>
-<div class = "mx-auto p-5 text-center bg-light w-50">
-<h2>Tu souhaites mettre en location un manga ?</h2>
-<%= link_to "Clique ici", new_manga_path, class: "btn btn-primary float-center"%>
+
+<div class="mx-auto p-5 text-center w-50">
+  <h2>Tu souhaites mettre en location un manga ?</h2>
+  <%= link_to "Clique ici", new_manga_path, class: "btn btn-primary" %>
 </div>

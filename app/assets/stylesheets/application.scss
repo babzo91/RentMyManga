@@ -12,6 +12,10 @@
 @import "pages/home";
 @import "pages/dashboard";
 @import "pages/index";
+@import "mangas/index";
+
+// Flatpickr
+@import 'flatpickr/dist/flatpickr.min.css';
 
 footer {
   background-color: #333;
@@ -21,3 +25,4 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+
