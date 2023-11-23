@@ -12,6 +12,7 @@
 @import "pages/home";
 @import "pages/dashboard";
 @import "pages/index";
+@import "pages/annonce.scss";
 @import "mangas/index";
 
 // Flatpickr
@@ -25,8 +26,6 @@ footer {
   display: flex;
   justify-content: space-between;
 }
-
-
 header {
   background-image: url('navbar_img.jpg'); /* Remplace avec ton image de fond */
   background-position: center; /* Centre l'image dans la navbar */
@@ -37,4 +36,3 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-

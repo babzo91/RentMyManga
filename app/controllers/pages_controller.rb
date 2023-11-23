@@ -12,6 +12,9 @@ class PagesController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
+  def annonce
+  end
+
   def show
   end
 end
