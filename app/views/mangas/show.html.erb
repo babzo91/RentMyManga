@@ -6,7 +6,7 @@
         <div class="text-center" style="top: 140px;">
           <p>Mis en location par</p>
           <% if @user.avatar.nil? %>
-            <p><%= image_tag "no_avatar.jpg", class: "avatar"%></p>
+            <p><%= image_tag "no_avatar.jpg", class: "avatar-large"%></p>
           <% else %>
             <%= cl_image_tag @user.avatar.key, height: 100, width: 100, crop: :fit %>
           <% end %>

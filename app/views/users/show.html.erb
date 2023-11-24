@@ -1,0 +1,24 @@
+<div class="text-center"><% if @user.avatar.nil? %>
+            <%= image_tag "no_avatar.jpg", class: "avatar-large"%>
+          <% else %>
+            <%= cl_image_tag @user.avatar.key, height: 100, width: 100, crop: :fit %>
+          <% end %>
+<h1><%= @user.first_name %>  <%= @user.last_name %></h1>
+<h3><%= @user.address %></h3></div>
+<h1 class="text-center">Liste des mangas mis en location</h1>
+
+<div class="d-flex flex-wrap justify-content-center">
+  <% @mangas.each do |manga| %>
+    <div class="card m-2" style="width: 18rem;">
+      <%= cl_image_tag manga.photo.key, height: '320', width: '300', class: "card-img-top", alt: "#{manga.title} Cover" %>
+      <div class="card-body">
+        <h5 class="card-title text-center"><%= manga.title %></h5>
+        <p class="card-text">Auteur: <%= manga.author %></p>
+        <p class="card-text" style="margin-bottom: 10px;">Prix: <%= manga.price_per_day %>€</p>
+      </div>
+      <div class="text-right mb-2 mx-auto">
+        <%= link_to "Voir la Fiche", manga_path(manga), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
