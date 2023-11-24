@@ -10,7 +10,7 @@
           <% else %>
             <%= cl_image_tag @user.avatar.key, height: 100, width: 100, crop: :fit %>
           <% end %>
-          <p><%= @user.first_name %> <%= @user.last_name %></p>
+          <p><%= link_to @user.first_name+"  "+@user.last_name, user_path(@user) %></p>
           <p>Prix/Jour: <%= "#{@manga.price_per_day} €"%></p>
           <p><%= link_to "Louer ce manga", new_manga_booking_path(@manga), class: "btn btn-dark"%></p>
         </div>
