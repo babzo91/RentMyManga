@@ -28,7 +28,7 @@ naruto.photo.attach(io: URI.open("https://res.cloudinary.com/dhco7tc5l/image/upl
 naruto.save!
 puts 'Naruto created'
 
-dbz = Manga.new(title: "Dragon-Ball-Z", synopsis: "Dragon Ball Z se déroule cinq ans après le mariage de Son Goku et de Chichi, désormais parents de Son Gohan2. Raditz, un mystérieux guerrier extraterrestre, qui s'avère être le frère de Son Goku, arrive sur Terre pour retrouver ce dernier. Ce dernier apprend qu'il vient d'une planète de guerriers redoutables dont il ne reste plus que quatre survivants, et qu'il avait été envoyé sur la planète Terre dans le but de la conquérir (une chute alors qu'il était enfant lui aurait fait perdre la mémoire).",
+dbz = Manga.new(title: "Dragon-Ball-Z", synopsis: "Dragon Ball Z se déroule cinq ans après le mariage de Son Goku et de Chichi, désormais parents de Son Gohan. Raditz, un mystérieux guerrier extraterrestre, qui s'avère être le frère de Son Goku, arrive sur Terre pour retrouver ce dernier. Ce dernier apprend qu'il vient d'une planète de guerriers redoutables dont il ne reste plus que quatre survivants, et qu'il avait été envoyé sur la planète Terre dans le but de la conquérir (une chute alors qu'il était enfant lui aurait fait perdre la mémoire).",
 author: "Akira Toriyama", category: "Shonen", price_per_day: 2)
 dbz.user = User.all.sample
 dbz.photo.attach(io: URI.open("https://res.cloudinary.com/dhco7tc5l/image/upload/v1700738062/fhjig9zl71jqa5xwfzjl.webp"), filename: "dbz", content_type: "image/webp")
