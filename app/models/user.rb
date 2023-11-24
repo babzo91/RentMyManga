@@ -9,3 +9,4 @@ class User < ApplicationRecord
   has_many :mangas, through: :bookings
   has_many :bookings
 end
+
