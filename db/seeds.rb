@@ -7,10 +7,10 @@ User.destroy_all
 puts 'All user destroyed'
 
 
-User.create!(first_name: "Iqbal", last_name: "Bashir", email: "iqou@bashir.com", address: "98 boulevard de l'europe 91000 Evry", password: "123456", profile_picture: Rails.root.join("app", "assets", "images", "user profile picture beared.png").open)
-User.create!(first_name: "Thierry", last_name: "Edmon", email: "thierry@edmon.com", address: "98 boulevard de l'europe 91000 Evry", password: "123456", profile_picture: Rails.root.join("app", "assets", "images", "user profile picture geektype.png").open)
-User.create!(first_name: "Tai", last_name: "Tran", email: "tai@tran.com", address: "98 boulevard de l'europe 91000 Evry", password: "123456", profile_picture: Rails.root.join("app", "assets", "images", "user profile picture transparent.png").open)
-User.create!(first_name: "Harris", last_name: "Shahbaz", email: "harris@shahbaz.com", address: "98 boulevard de l'europe 91000 Evry", password: "123456", profile_picture: Rails.root.join("app", "assets", "images", "user profile picture anonymous.png").open)
+User.create!(first_name: "Iqbal", last_name: "Bashir", email: "iqou@bashir.com", address: "98 boulevard de l'europe 91000 Evry", password: "123456", profile_picture:"https://imgs.search.brave.com/aGp5VZ3kNd3iX-i_J4H3qpmTdMkau56_lVYVNA4XNuc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2I2L2Fj/L2JlL2I2YWNiZTY5/NzhiMzYzYmRkZTYw/ZDg4Mjg0NTQwNzlh/LmpwZw")
+User.create!(first_name: "Thierry", last_name: "Edmon", email: "thierry@edmon.com", address: "98 boulevard de l'europe 91000 Evry", password: "123456", profile_picture: "https://imgs.search.brave.com/eEN9VqMo8TUr8NBSmy558UHLwg8ZOXQEyQRwcl669mk/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMucHJpc21pYy5p/by91dG9waXgtbmV4/dC13ZWJzaXRlL016/azBOR0prT1dFdFky/WmxZUzAwTWpWakxU/a3dOVEF0T0dZNU9X/UXpOMkl6TkdWaV83/NjJjZWM1Ny0yZWFm/LTRlYWYtOWEwZC0y/ZTc4NjAxNDdlNDhf/cHJvZmlsaG9tbWU3/LmpwZz9peGxpYj1q/cy0zLjguMCZ3PTM4/NDAmYXV0bz1mb3Jt/YXQmZml0PW1heA")
+User.create!(first_name: "Tai", last_name: "Tran", email: "tai@tran.com", address: "98 boulevard de l'europe 91000 Evry", password: "123456", profile_picture: "https://imgs.search.brave.com/AEePkKscw35i0s1DunrYa7SFcE5v-26yH67k4M1iU2E/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTE4/OTQ4OTIzMS9mci9w/aG90by92dWUtZGUt/cHJvZmlsLWRlLWpl/dW5lLWhvbW1lLWFm/cmljYWluLWJlYXUt/aGV1cmV1eC1zb3Vy/aWFudC5qcGc_cz02/MTJ4NjEyJnc9MCZr/PTIwJmM9UFBmQWM5/VjZHT1hUeWpLdDdZ/LW5hOGs2Y1JXeUNN/TGhGTFlWSmpzZzdr/OD0")
+User.create!(first_name: "Harris", last_name: "Shahbaz", email: "harris@shahbaz.com", address: "98 boulevard de l'europe 91000 Evry", password: "123456", profile_picture: "https://imgs.search.brave.com/z-3_VMVbo5k1c4nYN-MGQSo7jUle-HYqNAS5ED1Soag/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9kMnFw/MHNpb3RsYTc0Ni5j/bG91ZGZyb250Lm5l/dC9pbWcvdXNlLWNh/c2VzL3Byb2ZpbGUt/cGljdHVyZS90ZW1w/bGF0ZV8wLmpwZw")
 
 # def api(image)
 #   url = URI("https://api.jikan.moe/v4/anime?q=#{image}")
