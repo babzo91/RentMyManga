@@ -1,19 +1,21 @@
-    <div class= "mes-annonces">
+    <div class= "mt-2 mes-annonces">
     <h1>Mes Annonces</h1></div>
     <div class="container">
-      <h1></h1>
+      <%@my_manga.each do |manga| %>
         <section class="gestion-section">
             <h2></h2>
             <div class="annonce-details">
-                <img src="https://m.media-amazon.com/images/I/81wdIzgWCjL._SL1500_.jpg" alt="Annonce Image">
-                <div class="description">
-                    <p>Naruto</p>
-                    <p>Prix: 15€</p>
-                    <p>Date de publication: 24/11/2023</p>
+
+              <%= cl_image_tag manga.photo.key, height: 300, width: 300, crop: :fit, radius: 5 %>
+              <div class="description">
+                <p><%= manga.title %></p>
+                <p>Prix/J: <%= manga.price_per_day %></p>
+                <p>Date de publication: <%= manga.created_at %></p>
               <div class="actions">
-                <button class="modifier-btn">Modifier</button>
-                <button class="supprimer-btn">Supprimer</button>
+              <button class="btn btn-primary"><%= link_to "Modifier", edit_manga_path(manga), class: "text-dark text-decoration-none" %></button>
+              <button class="btn btn-danger"><%= link_to "Supprimer", manga_path(manga), data: {turbo_method: :delete, turbo_confirm: "Etes vous sur ?"}, class: "text-dark text-decoration-none" %></button>
             </div>
-                </div>
+            </div>
             </div>
         </section>
+      <% end %>

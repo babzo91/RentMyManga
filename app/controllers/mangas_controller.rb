@@ -40,6 +40,12 @@ class MangasController < ApplicationController
     else
       render :edit
     end
+
+  def destroy
+    @manga = Manga.find(params[:id])
+    @manga.destroy
+    redirect_to annonce_path, status: :see_other
+  end
   end
 
   private

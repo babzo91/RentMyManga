@@ -14,34 +14,40 @@
       </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-  <div class="d-flex align-items-center"> <!-- Utilisation de flexbox pour aligner les éléments -->
-  <li class="nav-item active">
-    <%= link_to "Accueil", root_path, class: "btn btn-primary mx-2" %>
-  </li>
-  <li class="nav-item">
-    <%= link_to "Liste des mangas", mangas_path, class: "btn btn-primary mx-2" %>
-  </li>
-    <li class="nav-item">
-      <%= link_to "Vendre mon manga", new_manga_path, class: "btn btn-primary mx-2"%>
-    </li>
-    <li class="nav-item">
-      <%= link_to "Tableau de bord", dashboard_path, class: "btn btn-primary mx-2" %>
-    </li>
-  </div>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <%= image_tag @user.profile_picture, height: 50, width: 50, crop: :fit %>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-      <%= link_to "Mes mangas", annonce_path, class: "dropdown-item" %>
-      <%= link_to "Mes réservations", "#", class: "dropdown-item" %>
-      <%= link_to "Modifier son profil", edit_user_registration_path, class: "dropdown-item" %>
-      <%= link_to "Se déconnecter", destroy_user_session_path , class: "dropdown-item", data: {turbo_method: :delete} %>
-    </ul>
-  </li>
-</ul>
-
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active">
+            <%= link_to "Accueil", root_path, class: "btn btn-primary mx-2" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Liste des mangas", mangas_path, class: "btn btn-primary mx-2" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Vendre mon manga", new_manga_path, class: "btn btn-primary mx-2"%>
+        <% if user_signed_in? %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Tableau de bord", dashboard_path, class: "btn btn-primary mx-2" %>
+          </li>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= image_tag @user.profile_picture, height: 50, width: 50, crop: :fit %>
+          </a>
+          <li class="nav-item dropdown">
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Mes mangas", annonce_path, class: "dropdown-item" %>
+              <%= link_to "Mes réser  vations", "#", class: "dropdown-item" %>
+              <%= link_to "Modifier son profil", edit_user_registration_path, class: "dropdown-item" %>
+              <%= link_to "Se déconnecter", destroy_user_session_path , class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Se connecter", new_user_session_path, class: "btn btn-primary mx-2" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "S'inscrire", new_user_registration_path, class: "btn btn-primary mx-2" %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
