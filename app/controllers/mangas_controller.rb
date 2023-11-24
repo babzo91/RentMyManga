@@ -59,6 +59,6 @@ class MangasController < ApplicationController
   end
 
   def set_user
-    @user = current_user
+    @user_con = current_user
   end
 end

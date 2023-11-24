@@ -1,17 +1,33 @@
 <div class="row align-items-start">
   <!-- Première carte -->
+<% if @user_con == @user %>
+<div class="col-3 p-4 m-4 order-2">
+    <div class="card">
+      <div class="card-body sh">
+        <div class="text-center" style="top: 140px;">
+          <p>Mis en location par vous</p>
+          <p><%= image_tag @user.profile_picture, height: 50, width: 50, crop: :fit %></p>
+          <p>Prix/Jour: <%= "#{@manga.price_per_day} €"%></p>
+          <p><button class="btn btn-primary"><%= link_to "Modifier", edit_manga_path(@manga), class: "text-dark text-decoration-none" %></button></p>
+         <p><button class="btn btn-danger"><%= link_to "Supprimer", manga_path(@manga), data: {turbo_method: :delete, turbo_confirm: "Etes vous sur ?"}, class: "text-dark text-decoration-none" %></button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% else %>
   <div class="col-3 p-4 m-4 order-2">
     <div class="card">
       <div class="card-body sh">
         <div class="text-center" style="top: 140px;">
           <p>Mis en location par <%= "#{@user.first_name}" %> <%= "#{@user.last_name}" %></p>
-            <%= image_tag @user.profile_picture, height: 50, width: 50, crop: :fit %>
+          <%= image_tag @user.profile_picture, height: 50, width: 50, crop: :fit %>
           <p>Prix/Jour: <%= "#{@manga.price_per_day} €"%></p>
           <p><%= link_to "Louer ce manga", new_manga_booking_path(@manga), class: "btn btn-dark"%></p>
         </div>
       </div>
     </div>
   </div>
+  <% end %>
 
   <!-- Deuxième carte -->
 <%= link_to mangas_path do %>
