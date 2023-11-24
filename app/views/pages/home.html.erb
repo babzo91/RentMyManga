@@ -1,4 +1,4 @@
-<h1 class= "text-center">Top des ventes</h1>
+<h1 class= "text-center pt-3">Top des ventes</h1>
 <div class="main-container">
   <div id="manga_top" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -10,11 +10,11 @@
               <%= link_to manga_path(manga) do %>
               <%= cl_image_tag manga.photo.key, height: '320', class: 'd-block mx-auto carousel-image' %>
               <% end %>
-              <div class="card-body">
+              <div class="shadow-sm card-body">
                 <h5 class="card-title"><%= manga.title %></h5>
                 <p class="card-text">Auteur: <%= manga.author %></p>
                 <p class="card-text">Prix: <%= manga.price_per_day %>€</p>
-                <%= link_to "Voir la Fiche", manga_path(manga), class: "btn btn-primary" %>
+                <%= link_to "Voir la Fiche", manga_path(manga), class: "mb-2 btn btn-primary" %>
               </div>
             </div>
           </div>
@@ -34,7 +34,7 @@
   </div>
 
 
-<div class = "mx-auto mt-2 p-5 text-center bg-light w-50">
+<div class = "mx-auto p-5 text-center bg-light w-50">
   <h2>Tu souhaites mettre en location un manga ?</h2>
   <h1><%= link_to "Clique ici", new_manga_path, class: "btn btn-primary float-center"%></h1>
 </div>

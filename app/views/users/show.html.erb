@@ -1,4 +1,11 @@
-<h1 class="mt-2 text-center">Liste des mangas mis en location</h1>
+<div class="text-center"><% if @user.avatar.nil? %>
+            <%= image_tag "no_avatar.jpg", class: "avatar-large"%>
+          <% else %>
+            <%= cl_image_tag @user.avatar.key, height: 100, width: 100, crop: :fit %>
+          <% end %>
+<h1><%= @user.first_name %>  <%= @user.last_name %></h1>
+<h3><%= @user.address %></h3></div>
+<h1 class="text-center">Liste des mangas mis en location</h1>
 
 <div class="d-flex flex-wrap justify-content-center">
   <% @mangas.each do |manga| %>
@@ -14,9 +21,4 @@
       </div>
     </div>
   <% end %>
-</div>
-
-<div class="mx-auto p-5 text-center w-50">
-  <h2>Tu souhaites mettre en location un manga ?</h2>
-  <%= link_to "Clique ici", new_manga_path, class: "btn btn-primary" %>
 </div>

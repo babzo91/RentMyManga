@@ -4,6 +4,9 @@ class MangasController < ApplicationController
 
   def index
     @mangas = Manga.all
+    if params[:query].present?
+      @mangas = Manga.search_manga(params[:query])
+    end
   end
 
   def show
