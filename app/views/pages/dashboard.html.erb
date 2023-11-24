@@ -1,21 +1,21 @@
-  <div class="container d-flex">
+  <div class="my-5 container d-flex">
     <div class="box">
       <p class="box-text">Annonces</p>
-      <p class="box-text">Gérer mes annonces déposées</p>
+      <p class="box-text"><%= link_to "Gérer mes annonces déposées", annonce_path %></p>
     </div>
 
     <div class="box">
       <p class="box-text">Réservations</p>
-      <p class="box-text">Retrouver vos réservations de mangas</p>
-    </div>
+      <p class="box-text"><%= link_to "Retrouver vos réservations de mangas", mangas_path %></p>
+</div>
 
     <div class="box">
       <p class="box-text">Transactions</p>
-      <p class="box-text">Suivre mes opérations</p>
+      <p class="box-text"><%= link_to "Suivre mes opérations", mangas_path %></p>
     </div>
 
     <div class="box">
       <p class="box-text">Paramètres</p>
-      <p class="box-text">Compléter et modifier mes informations</p>
+      <p class="box-text"><%= link_to "Compléter et modifier mes informations", edit_user_registration_path %></p>
     </div>
   </div>
