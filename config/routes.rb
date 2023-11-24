@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get '/legal', to: 'pages#legal', as: :legal
   get '/faq', to: 'pages#faq', as: :faq
   get '/dashboard', to: 'pages#dashboard', as: :dashboard
+  get '/reservation', to: 'pages#reservation', as: :reservation
 end
