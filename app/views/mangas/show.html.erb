@@ -5,6 +5,11 @@
       <div class="card-body sh">
         <div class="text-center" style="top: 140px;">
           <p>Mis en location par</p>
+          <% if @user.avatar.nil? %>
+            <p><%= image_tag "no_avatar.jpg", class: "avatar"%></p>
+          <% else %>
+            <%= cl_image_tag @user.avatar.key, height: 100, width: 100, crop: :fit %>
+          <% end %>
           <p><%= @user.first_name %> <%= @user.last_name %></p>
           <p>Prix/Jour: <%= "#{@manga.price_per_day} €"%></p>
           <p><%= link_to "Louer ce manga", new_manga_booking_path(@manga), class: "btn btn-dark"%></p>
