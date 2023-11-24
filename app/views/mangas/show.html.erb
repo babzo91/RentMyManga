@@ -5,7 +5,7 @@
       <div class="card-body sh">
         <div class="text-center" style="top: 140px;">
           <p>Mis en location par <%= "#{@user.first_name}" %> <%= "#{@user.last_name}" %></p>
-          <%= image_tag "userpp", height: 50, width: 50, crop: :fit %> <br>
+            <%= image_tag @user.profile_picture, height: 50, width: 50, crop: :fit %>
           <p>Prix/Jour: <%= "#{@manga.price_per_day} €"%></p>
           <p><%= link_to "Louer ce manga", new_manga_booking_path(@manga), class: "btn btn-dark"%></p>
         </div>

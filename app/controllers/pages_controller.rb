@@ -18,6 +18,8 @@ class PagesController < ApplicationController
   end
 
   def annonce
+    @mangas = Manga.all
+    @my_manga = @mangas.where(user_id: @user)
   end
 
   def dashboard
