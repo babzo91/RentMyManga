@@ -14,6 +14,9 @@ class PagesController < ApplicationController
   def confidentialites
   end
 
+  def reservation
+  end
+
   def legal
   end
 
