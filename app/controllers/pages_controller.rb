@@ -1,10 +1,10 @@
 class PagesController < ApplicationController
   require 'json'
   require 'open-uri'
+  before_action :set_user
   skip_before_action :authenticate_user!, only: [:home, :conditions, :legal, :confidentialites]
 
   def home
-    @user = current_user
     @mangas = Manga.all
   end
 
@@ -21,5 +21,11 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+  end
+
+  private
+
+  def set_user
+    @user = current_user
   end
 end

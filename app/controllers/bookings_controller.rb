@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :set_user
+
   def new
     @manga = Manga.find(params[:manga_id])
     @booking = Booking.new
@@ -37,5 +39,9 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
+  end
+
+  def set_user
+    @user = current_user
   end
 end

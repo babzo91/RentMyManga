@@ -1,8 +1,10 @@
 class MangasController < ApplicationController
   before_action :set_manga, only: [:show, :edit, :update]
+  before_action :set_user
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    @user = current_user
     @mangas = Manga.all
     if params[:query].present?
       @mangas = Manga.search_manga(params[:query])
@@ -48,5 +50,9 @@ class MangasController < ApplicationController
 
   def set_manga
     @manga = Manga.find(params[:id])
+  end
+
+  def set_user
+    @user = current_user
   end
 end
