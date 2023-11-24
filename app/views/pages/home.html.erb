@@ -10,11 +10,11 @@
               <%= link_to manga_path(manga) do %>
               <%= cl_image_tag manga.photo.key, height: '320', class: 'd-block mx-auto carousel-image' %>
               <% end %>
-              <div class="card-body">
+              <div class="shadow-sm card-body">
                 <h5 class="card-title"><%= manga.title %></h5>
                 <p class="card-text">Auteur: <%= manga.author %></p>
                 <p class="card-text">Prix: <%= manga.price_per_day %>€</p>
-                <%= link_to "Voir la Fiche", manga_path(manga), class: "btn btn-primary" %>
+                <%= link_to "Voir la Fiche", manga_path(manga), class: "mb-2 btn btn-primary" %>
               </div>
             </div>
           </div>
