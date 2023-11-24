@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :conditions, :legal, :confidentialites]
 
   def home
+    @user = current_user
     @mangas = Manga.all
   end
 
