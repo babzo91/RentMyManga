@@ -1,11 +1,4 @@
-<div class="text-center"><% if @user.avatar.nil? %>
-            <%= image_tag "no_avatar.jpg", class: "avatar-large"%>
-          <% else %>
-            <%= cl_image_tag @user.avatar.key, height: 100, width: 100, crop: :fit %>
-          <% end %>
-<h1><%= @user.first_name %>  <%= @user.last_name %></h1>
-<h3><%= @user.address %></h3></div>
-<h1 class="text-center">Liste des mangas mis en location</h1>
+<h1 class="text-center">Liste des mangas mis en location par <%= @user.first_name %> <%= @user.last_name %></h1>
 
 <div class="d-flex flex-wrap justify-content-center">
   <% @mangas.each do |manga| %>
